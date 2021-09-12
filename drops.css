@@ -1,0 +1,74 @@
+
+/*  ویژگی های کل صفحه  */
+*{
+
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+
+}
+
+/*  قرار گیری عناصر در مرکز صفحه   */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(236, 236, 236);
+}
+
+.drops{
+    position: relative;
+}
+/*  ویژگی های عنصر والد   */
+.drop{
+position: absolute;
+width: 150px;
+height:150px;
+background: transparent;
+border-radius: 66% 34% 38% 62% / 44% 42% 58% 56% ;
+box-shadow: inset 10px 10px 10px rgb(0, 0, 0, 0.05),
+                    15px 25px 10px rgb(0, 0, 0, 0.1),
+                    15px 20px 20px rgb(0,0,0,0.05),
+                    inset -10px -10px 15px rgb(255,255,255,0.9);
+
+}
+
+/*  سایه سفید روی قطره   */
+.drop::before{
+    content: "";
+position: absolute;
+top:25px ;
+left:35px;
+background: #fff;
+width:20px ;
+height:20px ;
+border-radius: 65% 35% 35% 65% / 44% 37% 63% 56% ;
+
+}
+
+/*  سایه دوم روی قطره   */
+.drop::after{
+    content: "";
+position: absolute;
+top:25px ;
+left:65px;
+background: #fff;
+width:10px ;
+height:10px ;
+border-radius: 65% 35% 35% 65% / 44% 37% 63% 56% ;
+
+}
+
+
+/*  عناصر فرزند با ارث بری ویژگی های عنصر والد   */
+/*  تعیین ابعاد و مکان قرار گیری عناصر فرزند   */
+.drop:nth-child(2){
+    transform: scale(0.5) translate(-250px, 90px);
+}
+.drop:nth-child(3){
+    transform: scale(0.3) translate(-150px, 290px);
+}
+.drop:nth-child(4){
+    transform: scale(0.4) translate(250px, 90px);
+}
